@@ -6,7 +6,7 @@
     align-items: center;
     border-radius: 0px;
     background: var(--color-white-1);
-    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px var(--color-white-2), -20px -20px 60px var(--color-white-1);
   }
   
   .advert_card > img {
@@ -16,7 +16,7 @@
   .advert_card > h2 {
     background-color: var(--color-pink);
     width: 100%;
-    color: var(--color-black);
+    color: var(--color-dark-green);
     text-align: center;
     padding: 1rem 0;
   }

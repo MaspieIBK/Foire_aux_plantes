@@ -15,7 +15,7 @@
 }
 
 .backoffice_content > ul > li > button {
-    background-color: var(--color-black);
+    background-color: var(--color-dark-green);
     color: var(--color-white-1);
     padding: 1rem 2rem;
 }
@@ -28,8 +28,8 @@
 }
 
 .backoffice_content > ul > li > input[type="text"] {
-    background-color: var(--color-white-1);
-    border: 1px solid var(--color-black);
+    background-color: var(--color-white-2);
+    border: 1px solid var(--color-dark-green);
     margin-bottom: 16px;
 }
 
@@ -43,11 +43,11 @@
     margin: 1rem 0;
     padding: 1rem 2rem;
     background-color: var(--color-white-1);
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-dark-green);
 }
 
 .backoffice_content > form > input[type="submit"] {
-    background-color: var(--color-black);
+    background-color: var(--color-dark-green);
     color: var(--color-white-1);
     padding: 1rem 2rem;
     text-align: center;

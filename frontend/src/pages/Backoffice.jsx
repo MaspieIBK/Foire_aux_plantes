@@ -51,7 +51,7 @@ export default function Backoffice() {
       <p>Gestion des annonces</p>
 
       <form onSubmit={postAdvert}>
-        <label htmlFor="state">Type d'annonce</label>
+        <label htmlFor="state">TROC ou DON ?</label>
         <input
           type="text"
           value={state}
@@ -69,13 +69,13 @@ export default function Backoffice() {
           value={content}
           onChange={(event) => setContent(event.target.value)}
         />
-        <label htmlFor="city">Ville</label>
+        <label htmlFor="city">Dans quelle ville est la plante ?</label>
         <input
           type="text"
           value={city}
           onChange={(event) => setCity(event.target.value)}
         />
-        <label htmlFor="county">Département</label>
+        <label htmlFor="county">Dans quel département est la plante ?</label>
         <input
           type="text"
           value={county}

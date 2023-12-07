@@ -14,6 +14,15 @@ export default function Navbar() {
         <li>
           <Link to="/advert">Annonces</Link>
         </li>
+        <li>
+          <Link to="/backoffice">Espace membre</Link>
+        </li>
+        <li>
+          <Link to="/register">S'enregistrer</Link>
+        </li>
+        <li>
+          <Link to="/login">Se connecter</Link>
+        </li>
       </ul>
     </nav>
   );
