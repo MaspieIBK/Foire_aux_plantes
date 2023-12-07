@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,300;1,400;1,600;1,700&family=Raleway:wght@200;300;400&display=swap');
+
+:root {
+  --font-family: 'Raleway', sans-serif;
+  --color-white-1: #ffffff;
+  --color-white-2: #fefee3;
+  --color-pink: #ffc9b9;
+  --color-orange: #d68c45;
+  --color-light-green: #4c956c;
+  --color-dark-green: #2c6e49;
+  --color-black: #212529;
+}
+
+* {
+  font-family: var(--font-family);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: var(--color-black);
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  min-height: 81vh;
+  padding: 4rem 2rem;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+input,
+button {
+  all: unset;
+}
+
+body {
+  background-color: var(--color-white-2);
+}

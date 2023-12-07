@@ -23,17 +23,32 @@ class AdvertManager extends AbstractManager {
     ]);
   }
 
-  insert(state, when, picture, content, city, county) {
+  insert(advert) {
     return this.database.query(
       `INSERT INTO advert (state, when, picture, content, city, county) VALUES (?, ?, ?, ?, ?, ?)`,
-      [state, when, picture, content, city, county]
+      [
+        advert.state,
+        advert.when,
+        advert.picture,
+        advert.content,
+        advert.city,
+        advert.county,
+      ]
     );
   }
 
-  update(id, state, when, picture, content, city, county) {
+  update(advert, id) {
     return this.database.query(
       `UPDATE advert SET state = ?, when = ?, picture = ?, content = ?, city = ?, county = ? WHERE id = ?`,
-      [id, state, when, picture, content, city, county]
+      [
+        advert.state,
+        advert.when,
+        advert.picture,
+        advert.content,
+        advert.city,
+        advert.county,
+        id,
+      ]
     );
   }
 

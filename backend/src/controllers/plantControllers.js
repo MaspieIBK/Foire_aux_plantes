@@ -46,21 +46,20 @@ const postPlant = (req, res) => {
 };
 
 const updatePlant = (req, res) => {
+  const { id } = req.params;
   const plant = req.body;
-  plant.id = parseInt(req.params.id, 10);
+
+  console.error("test", plant);
 
   models.plant
-    .update(plant)
+    .update(plant, id)
     .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
+      console.info(result);
+      res.status(200).send("La fiche plante a bien été modifiée");
     })
     .catch((err) => {
       console.error(err);
-      res.sendStatus(500);
+      res.status(500).send("Erreur lors de la modification");
     });
 };
 

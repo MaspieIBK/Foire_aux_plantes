@@ -1,0 +1,31 @@
+nav {
+    background-color: var(--color-light-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav > ul > li > a {
+    color: var(--color-black);
+    font: bold;
+  }
+  
+  nav > ul > li > a:hover {
+    color: var(--color-white-2);
+  }
+  
+  nav > ul {
+    display: flex;
+    padding: 2rem 0;
+  }
+  
+  nav > ul > li {
+    margin: 0 2rem;
+  }
+  
+  nav > .logo > img {
+    height: 2rem;
+    width: auto;
+    color: var(--color-pink);
+    margin-left: 2rem;
+  }

@@ -62,55 +62,48 @@ const searchByCounty = (req, res) => {
 };
 
 const postAdvert = (req, res) => {
-  const { state, when, picture, content, city, county } = req.body;
+  const advert = req.body;
 
   models.advert
-    .insert(state, when, picture, content, city, county)
+    .insert(advert)
     .then(([result]) => {
       console.info(result);
       res.status(200).json({ message: "Annonce ajoutée avec succès" });
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).json({
-        error: err.errno,
-      });
+      res.status(500).send("Erreur de sauvegarde");
     });
 };
 
 const updateAdvert = (req, res) => {
+  const { id } = req.params;
   const advert = req.body;
-  advert.id = parseInt(req.params.id, 10);
+
+  console.error("test", advert);
 
   models.advert
-    .update(advert)
+    .update(advert, id)
     .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
+      console.info(result);
+      res.status(200).send("L'annonce a bien été modifiée");
     })
     .catch((err) => {
       console.error(err);
-      res.sendStatus(500);
+      res.status(500).send("Erreur lors de la modification");
     });
 };
 
 const deleteAdvert = (req, res) => {
-  models.advert
-    .delete(req.params.id)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
+  const { id } = req.params;
+
+  models.advert.delete(id).then(([result]) => {
+    if (result.affectedRows === 0) {
+      res.sendStatus(404);
+    } else {
+      res.status(200).send("Annonce supprimée avec succès");
+    }
+  });
 };
 
 module.exports = {

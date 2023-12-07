@@ -29,19 +29,17 @@ const read = (req, res) => {
 };
 
 const postUser = (req, res) => {
-  const { pseudo, email, hashedPassword } = req.body;
+  const user = req.body;
 
   models.user
-    .insert(pseudo, email, hashedPassword)
+    .insert(user)
     .then(([result]) => {
       console.info(result);
-      res.status(200).json({ message: "Compte crée avec succès", email });
+      res.status(200).json({ message: "Membre ajouté avec succès" });
     })
     .catch((err) => {
       console.error(err);
-      res.status(500).json({
-        error: err.errno,
-      });
+      res.status(500).send("Erreur de sauvegarde");
     });
 };
 
@@ -70,19 +68,15 @@ const updateUser = (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-  models.user
-    .delete(req.params.id)
-    .then(([result]) => {
-      if (result.affectedRows === 0) {
-        res.sendStatus(404);
-      } else {
-        res.sendStatus(204);
-      }
-    })
-    .catch((err) => {
-      console.error(err);
-      res.sendStatus(500);
-    });
+  const { id } = req.params;
+
+  models.user.delete(id).then(([result]) => {
+    if (result.affectedRows === 0) {
+      res.sendStatus(404);
+    } else {
+      res.status(200).send("Membre supprimé avec succès");
+    }
+  });
 };
 
 module.exports = { getAllUsers, read, postUser, updateUser, deleteUser };

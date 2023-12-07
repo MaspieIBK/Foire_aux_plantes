@@ -6,7 +6,7 @@ const models = require("../models");
 const checkIfGoodUser = (req, res, next) => {
   const { email, password } = req.query;
 
-  if (email === "malika.ink84@gmail.com" && password === "FoireAuxPlantesCP4") {
+  if (email === "admin@gmail.com" && password === "secret") {
     next();
   } else {
     res

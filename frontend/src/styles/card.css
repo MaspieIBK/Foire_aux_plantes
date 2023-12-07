@@ -1,0 +1,22 @@
+.advert_card {
+    background-color: var(--color-white-1);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0px;
+    background: var(--color-white-1);
+    box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  }
+  
+  .advert_card > img {
+    transform: scale(0.5);
+  }
+  
+  .advert_card > h2 {
+    background-color: var(--color-pink);
+    width: 100%;
+    color: var(--color-black);
+    text-align: center;
+    padding: 1rem 0;
+  }

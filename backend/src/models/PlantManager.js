@@ -5,17 +5,17 @@ class PlantManager extends AbstractManager {
     super({ table: "plant" });
   }
 
-  // insert(label, specification) {
-  //   return this.database.query(
-  //     `INSERT INTO plant (label, specification) VALUES (?, ?)`,
-  //     [label, specification]
-  //   );
-  // }
+  insert(plant) {
+    return this.database.query(
+      `INSERT INTO plant (label, specification) VALUES (?, ?)`,
+      [plant.label, plant.specification]
+    );
+  }
 
-  update(label, specification) {
+  update(plant) {
     return this.database.query(
       `UPDATE plant SET label = ?, specification = ? WHERE id = ?`,
-      [label, specification]
+      [plant.label, plant.specification]
     );
   }
 }
