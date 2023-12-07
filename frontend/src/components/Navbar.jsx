@@ -7,6 +7,7 @@ export default function Navbar() {
       <div className="logo">
         <img src="assets\images\logo.jpg" alt="two hands exchanging plants" />
       </div>
+      <p> LA FOIRE AUX PLANTES</p>
       <ul>
         <li>
           <Link to="/">Accueil</Link>
